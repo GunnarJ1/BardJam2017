@@ -13,3 +13,5 @@
 		--Dialogue manager
 		--Player Controller (modified fps controller prefab script)
 		--EnemyAi (state based machine-derived from wizards guild code)
+
+		EnemyAI inheritance for all ai types
