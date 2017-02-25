@@ -1,0 +1,14 @@
+
+
+	Design behind the game
+		--You are a jam trying to kill of fruits and absorb their souls
+		--You have a gun
+		--Dungeon based game
+		--End objective
+
+	
+
+	Classes
+		--Billboard script
+		--Dialogue manager
+		--Player Controller (modified fps controller prefab script)
