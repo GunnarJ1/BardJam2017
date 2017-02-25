@@ -13,6 +13,7 @@ public class PointFilterProcessor : AssetPostprocessor
         {
             TextureImporter textureImporter = (TextureImporter)assetImporter;
             textureImporter.filterMode = FilterMode.Point;
+            textureImporter.textureCompression = TextureImporterCompression.Uncompressed;
         }
     }
     
