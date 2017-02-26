@@ -52,6 +52,10 @@ public class EnemyAI : MonoBehaviour
 
     }
     
+    protected virtual void OnEnemyDeath()
+    {
+    }
+
     //Follows player around
     protected virtual void Follow()
     {
@@ -99,7 +103,10 @@ public class EnemyAI : MonoBehaviour
     {
         health -= damageAmount;
         if (health <= 0)
+        {
+            OnEnemyDeath();
             Destroy(gameObject);
+        }
         OnAttacked(damageAmount);
     }
 

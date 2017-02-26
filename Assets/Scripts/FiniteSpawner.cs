@@ -16,6 +16,7 @@ public class FiniteSpawner : MonoBehaviour {
 
     private void Update()
     {
+        
         if (canSpawn && spawnCounter < spawnMax)
         {
             SpawnObject(spawn);

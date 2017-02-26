@@ -36,6 +36,13 @@ public class StrawberryAI : EnemyAI {
         StartCoroutine(ColorReset());
     }
 
+    protected override void OnEnemyDeath()
+    {
+        int xp = int.Parse(GameManager.instance.playerStats["xp"] as string);
+        xp += 10;
+        GameManager.instance.playerStats["xp"] = xp + "";
+    }
+
     IEnumerator ColorReset()
     {
         yield return new WaitForSeconds(.2f);

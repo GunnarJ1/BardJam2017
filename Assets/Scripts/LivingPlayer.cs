@@ -9,8 +9,9 @@ public class LivingPlayer : MonoBehaviour {
     public void DamagePlayer(float damageAmount)
     {
         health -= damageAmount;
+        GameManager.instance.playerStats["health"] = health + ""; 
         if (health <= 0)
             gameObject.SetActive(false);
     }
-
+    
 }

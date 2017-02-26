@@ -13,11 +13,14 @@
 		--Dialogue manager
 		--Player Controller (modified fps controller prefab script)
 		--EnemyAi (state based machine-derived from wizards guild code)
-
+		--Gamemanager (changes level using enum values)
 		EnemyAI inheritance for all ai types
 
 
 	Next:
+
+		(Working on now)
+			Game Manager - Handles player's statistics
 		More Levels
 		More Enemies
 		Sound FX
@@ -28,3 +31,21 @@
 		Crossed strawberries
 		Angry cherries
 		Grouchy grapes
+		Badass Banana (Boss)
+
+
+	Levels
+		First level Strawberries (Done)
+		Second level Strawberries and Grouchy grapes (Work on)
+		Third level all enemies but badass banana
+		Fourth badass banana with all enemies
+
+	Stuff to learn:
+		Unity Event System (for the dialogue system)
+
+
+
+	Dictionary player prefs
+
+	xp = int
+	health = int
