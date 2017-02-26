@@ -16,6 +16,7 @@ public class StrawberryAI : EnemyAI {
         currentMaterial = GetComponent<Renderer>().material;
         hitMaterial = new Material(currentMaterial);
         hitMaterial.color = Color.red;
+        speed = .01f;
     }
 
     protected override void Attack()
@@ -31,7 +32,6 @@ public class StrawberryAI : EnemyAI {
 
     protected override void OnAttacked(float damageAmount)
     {
-        Debug.Log(damageAmount);
         GetComponent<Renderer>().material = hitMaterial;
         StartCoroutine(ColorReset());
     }

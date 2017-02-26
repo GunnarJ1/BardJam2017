@@ -15,3 +15,16 @@
 		--EnemyAi (state based machine-derived from wizards guild code)
 
 		EnemyAI inheritance for all ai types
+
+
+	Next:
+		More Levels
+		More Enemies
+		Sound FX
+		Droppable items
+
+
+	Creatures:
+		Crossed strawberries
+		Angry cherries
+		Grouchy grapes

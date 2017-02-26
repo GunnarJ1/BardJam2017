@@ -11,7 +11,6 @@ public class LivingPlayer : MonoBehaviour {
         health -= damageAmount;
         if (health <= 0)
             gameObject.SetActive(false);
-        Debug.Log("Was attacked : " + damageAmount);
     }
 
 }

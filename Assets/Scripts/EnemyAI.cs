@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     private Quaternion tempRotation;
     private Vector3 tempPosition;
 
+    protected float speed = .005f;
     protected bool isAttacking = false;
     protected LivingPlayer attackablePlayer;
 
@@ -55,7 +56,7 @@ public class EnemyAI : MonoBehaviour
     protected virtual void Follow()
     {
         tempPosition = transform.position;
-        tempPosition = Vector3.Lerp(tempPosition, player.transform.position, .005f);
+        tempPosition = Vector3.Lerp(tempPosition, player.transform.position, speed);
         tempPosition.y = transform.position.y;
         transform.position = tempPosition;
         if (isAttacking)
