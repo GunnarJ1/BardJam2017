@@ -62,7 +62,7 @@ public class EnemyAI : MonoBehaviour
         tempPosition = transform.position;
         tempPosition = Vector3.Lerp(tempPosition, player.transform.position, speed);
         tempPosition.y = transform.position.y;
-        transform.position = tempPosition;
+        GetComponent<Rigidbody>().MovePosition(tempPosition);
         if (isAttacking)
             currentState = StateID.Attack;
     }

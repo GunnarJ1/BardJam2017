@@ -18,11 +18,9 @@
 
 
 	Next:
-
 		(Working on now)
-			Game Manager - Handles player's statistics
-		More Levels
-		More Enemies
+			More Levels
+			More Enemies
 		Sound FX
 		Droppable items
 

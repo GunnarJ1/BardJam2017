@@ -11,7 +11,11 @@ public class LivingPlayer : MonoBehaviour {
         health -= damageAmount;
         GameManager.instance.playerStats["health"] = health + ""; 
         if (health <= 0)
-            gameObject.SetActive(false);
+            GameManager.instance.ResetGame();
     }
-    
+
+    private void OnDisable()
+    {
+    }
+
 }

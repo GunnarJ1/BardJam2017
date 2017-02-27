@@ -32,6 +32,13 @@ public class FiniteSpawner : MonoBehaviour {
 
     }
 
+    private void OnDestroy()
+    {
+        int x = int.Parse((GameManager.instance.playerStats["spawners"] as string));
+        x++;
+        GameManager.instance.playerStats["spawners"] = x + "";
+    }
+
     void SpawnObject(GameObject obj)
     {
         GameObject go = Instantiate(obj, transform.localPosition, Quaternion.identity);

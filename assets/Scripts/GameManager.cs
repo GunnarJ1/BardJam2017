@@ -7,9 +7,7 @@ public class GameManager : MonoBehaviour {
     public Dictionary<string, object> playerStats = new Dictionary<string, object>();
 
     public static GameManager instance = null;
-
     
-
     private void Awake()
     {
         //Creates singleton pattern
@@ -25,21 +23,53 @@ public class GameManager : MonoBehaviour {
         playerStats.Add("health", "100");
         playerStats.Add("xp", "0");
         playerStats.Add("level", "1");
+        playerStats.Add("spawners", "0");
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        //Changes levels
+        //First level
 		if ((playerStats["level"] as string) == "1")
         {
-            if (int.Parse((playerStats["xp"] as string)) >= 180)
+            if (int.Parse((playerStats["spawners"] as string)) >= 2)
             {
                 playerStats["level"] = "2";
                 SceneManager.LoadScene(1);
+                playerStats["spawners"] = "0";
             }
-        } else if ((playerStats["level"] as string) == "1")
+            //Second level
+        } else if ((playerStats["level"] as string) == "2")
         {
+            if (int.Parse((playerStats["spawners"] as string)) >= 2)
+            {
+                playerStats["level"] = "3";
+                SceneManager.LoadScene(2);
+                playerStats["spawners"] = "0";
+            }
+            //Third level
+        } else if ((playerStats["level"] as string) == "3")
+        {
+            if (int.Parse((playerStats["spawners"] as string)) >= 1)
+            {
+                playerStats["level"] = "4";
+                SceneManager.LoadScene(3);
+                playerStats["spawners"] = "0";
+            }
+
         }
-	}
+    }
+
+    public void ResetGame()
+    {
+        playerStats.Clear();
+        playerStats.Add("health", "100");
+        playerStats.Add("xp", "0");
+        playerStats.Add("level", "1");
+        playerStats.Add("spawners", "0");
+        SceneManager.LoadScene("Level0");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
