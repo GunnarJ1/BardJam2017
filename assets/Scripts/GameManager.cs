@@ -60,16 +60,18 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    private void LateUpdate()
+    {
+        if (int.Parse(playerStats["health"] as string) <= 0)
+        {
+            ResetGame();
+        }
+    }
+
     public void ResetGame()
     {
-        playerStats.Clear();
-        playerStats.Add("health", "100");
-        playerStats.Add("xp", "0");
-        playerStats.Add("level", "1");
-        playerStats.Add("spawners", "0");
-        SceneManager.LoadScene("Level0");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0));
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
+        Destroy(gameObject);
     }
 
 }

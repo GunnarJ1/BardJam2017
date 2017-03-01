@@ -13,7 +13,7 @@ public class BananaAI : EnemyAI {
     protected override void Init()
     {
         base.Init();
-        health = 150;
+        health = 450;
         currentMaterial = GetComponent<Renderer>().material;
         hitMaterial = new Material(currentMaterial);
         hitMaterial.color = Color.red;
