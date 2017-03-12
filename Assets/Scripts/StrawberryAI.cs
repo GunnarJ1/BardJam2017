@@ -41,6 +41,7 @@ public class StrawberryAI : EnemyAI {
         int xp = int.Parse(GameManager.instance.playerStats["xp"] as string);
         xp += 10;
         GameManager.instance.playerStats["xp"] = xp + "";
+        EventManager.TriggerEvent("test");
     }
 
     IEnumerator ColorReset()

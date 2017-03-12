@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour {
                 SceneManager.LoadScene(3);
                 playerStats["spawners"] = "0";
             }
-
+            
         }
     }
 

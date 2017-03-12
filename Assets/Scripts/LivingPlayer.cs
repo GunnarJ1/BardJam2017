@@ -8,7 +8,7 @@ public class LivingPlayer : MonoBehaviour {
 
     public void DamagePlayer(float damageAmount)
     {
-       // health -= damageAmount;
+        health -= damageAmount;
         GameManager.instance.playerStats["health"] = health + ""; 
     }
 
