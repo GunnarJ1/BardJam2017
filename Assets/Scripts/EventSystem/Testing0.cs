@@ -19,6 +19,7 @@ public class Testing0 : MonoBehaviour {
 
     private void OnDisable()
     {
+        EventManager.StartListening("test", someListner);
     }
 
     void SomeFunction()

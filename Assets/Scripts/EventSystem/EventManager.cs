@@ -33,7 +33,7 @@ public class EventManager : MonoBehaviour {
     {
 
     }
-
+    
     public static void StartListening(string eventName, UnityAction listener)
     {
         UnityEvent thisEvent = null;

@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
         playerStats.Add("xp", "0");
         playerStats.Add("level", "1");
         playerStats.Add("spawners", "0");
+        EventManager.TriggerEvent("startGame");
     }
 	
 	// Update is called once per frame
@@ -70,6 +71,14 @@ public class GameManager : MonoBehaviour {
 
     public void ResetGame()
     {
+        //Dialogue Listener
+        EventManager.TriggerEvent("onDeath");
+        StartCoroutine(DestroyGameObject());
+    }
+
+    IEnumerator DestroyGameObject()
+    {
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(0);
         Destroy(gameObject);
     }
