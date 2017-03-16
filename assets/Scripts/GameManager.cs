@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour {
                 playerStats["level"] = "4";
                 SceneManager.LoadScene(3);
                 playerStats["spawners"] = "0";
+                EventManager.TriggerEvent("level4Entry");
             }
             
         }

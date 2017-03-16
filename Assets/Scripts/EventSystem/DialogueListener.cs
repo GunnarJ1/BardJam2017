@@ -17,22 +17,34 @@ public class DialogueListener : MonoBehaviour {
         ResetDialogueBox();
         actions.Add("startGame", new UnityAction(StartGameDialogue));
         actions.Add("onDeath", new UnityAction(OnDeath));
-
+        actions.Add("level4Entry", new UnityAction(Level4Entry));
     }
 
     private void Start()
     {
 
+        foreach (string key in actions.Keys)
+        {
+            EventManager.StartListening(key, actions[key]);
+        }
+
         Debug.Log("OnEnabled listner keyCount: " + actions.Count);
-        EventManager.StartListening("startGame", actions["startGame"]);
-        EventManager.StartListening("onDeath", actions["onDeath"]);
     }
 
     private void OnDisable()
     {
         Debug.Log("OnDisable listener");
-        EventManager.StopListening("startGame", actions["startGame"]);
-        EventManager.StopListening("onDeath", actions["onDeath"]);
+        foreach (string key in actions.Keys)
+        {
+            EventManager.StopListening(key, actions[key]);
+        }
+    }
+
+    void Level4Entry()
+    {
+        text.text = "You found the boss! The evil banana!" + 
+            " I mean he is evil so you gotta kill him anyways";
+        Invoke("ResetDialogueBox", 10);
     }
 
     void OnDeath()
